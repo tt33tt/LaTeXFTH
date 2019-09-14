@@ -1,2 +1,2 @@
 # LaTeXFTH
-LaTeX-Beispiel-Daei für die Freie Theologische Hochschule Gießen
+LaTeX-Beispiel-Datei für die Freie Theologische Hochschule Gießen
