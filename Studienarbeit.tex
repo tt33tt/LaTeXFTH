@@ -1,76 +1,5 @@
-\documentclass[a4paper,12pt]{scrreprt}
-\usepackage[onehalfspacing]{setspace}
-\usepackage[left=4cm,right=2cm,top=2cm,bottom=1cm,footnotesep=1.5em,includeheadfoot]{geometry} %bei Heftung/Bindung hier: left=5.5cm
-\usepackage{url} %URLs anklickbar, aber nur im PDF nicht im Druck
-
-%%%%%%%%% Abkürzungen %%%%%%%%%
-%optional nützlich
-\usepackage{xspace}
-\xspaceaddexceptions{“}
-\newcommand{\gap}{[…]\xspace}
-\newcommand{\zb}{z.~B.\xspace}
-\newcommand{\ZB}{Z.~B.\xspace}
-\newcommand{\dah}{d.~h.\xspace}
-\newcommand{\me}{m.~E.\xspace}
-\newcommand{\su}{s.~u.\xspace}
-\newcommand{\ua}{u.~a.\xspace}
-
-%%%%%%%%%% Sprachen %%%%%%%%%%%%%
-\usepackage{hyperref} %Literatur und Inhaltsverzeichnis  anklickbar, aber nur im PDF nicht im Druck
-\usepackage[german=quotes]{csquotes}
-\usepackage{polyglossia} %geht nur mit XeLaTeX-Compiler
-\setmainfont{Times New Roman}
-\setdefaultlanguage[spelling=new,babelshorthands]{german}
-\setotherlanguage[variant=american]{english}
-\setotherlanguage[variant=ancient]{greek}
-\newfontfamily\greekfont{SBL Greek} %vorher https://www.sbl-site.org/educational/BiblicalFonts_SBLGreek.aspx installieren
-\setotherlanguage{hebrew} %vorher https://www.sbl-site.org/educational/BiblicalFonts_SBLHebrew.aspx installieren
-\newfontfamily\hebrewfont[Script=Hebrew,Contextuals=Alternate]{SBL Hebrew}
-\newcommand{\heb}[1]{\texthebrew{#1}}
-%\setsansfont{Liberation Sans} % or some other sf font with Hebrew glyphs
-\newcommand{\captheb}[1]{\textrm{\texthebrew{#1}}}
-\newcommand{\grk}[1]{\textgreek{#1}}
-
-\newcommand{\hsd}{\heb{חֶ֫סֶד}\xspace}
-\newcommand{\amt}{\heb{אֱמֶת}\xspace}
-\newcommand{\hn}{\heb{חֵן}\xspace}
-\newcommand{\rhmm}{\heb{רַחֲמִים}\xspace}
-
-%%%%%%%%%% Bibliographie %%%%%%%%%%%%%%
-%Es hilft http://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf
-\usepackage{xpatch}
-\usepackage[style=verbose-ibid,citestyle=authortitle-ibid,hyperref=true,backend=biber,sortlocale=de,language=german,mincrossrefs=1000]{biblatex}
-\addbibresource{lit.bib} %{../../literatur/lit.bib} 
-%empfehlenswertes Programm jabref, der Zitierstil @online muss hier noch ausgefüllt werden
-%empfehlenswert vorausgefüllte Eigenschaften zu einer Quelle aus https://scholar.google.de/schhp?hl=de oder Google-Books importieren | Die Datei ist empfehlenswert in einem höheren Verzeichnis aufzubewahren, um sie für alle Studienarbeiten nutzen zu können
-
-\input{biblatexsettings}
-
-%Beispiele Unterkategorien in Bibliothek zu bilden
-%\DeclareBibliographyCategory{hesed}
-%\addtocategory{hesed}{David1000}
-%\nocite{Freude2000}
-%\DeclareBibliographyCategory{hen}
-%\addtocategory{hen}{Danke2001,Bitten2002}
-%\DeclareBibliographyCategory{rhm}
-%\addtocategory{rhm}{...}
-%\DeclareBibliographyCategory{amn}
-%\addtocategory{amn}{...}
-
-\newcommand{\at}[1]{\textsc{#1}}
-
-% Keine "Schusterjungen"
-\clubpenalty = 1000
-% Keine "Hurenkinder"
-\widowpenalty = 1000 \displaywidowpenalty = 1000
-\raggedbottom % Sorgt beim Dokumenttyp book dafür, daß kein Ausgleich des unteren Seitenrandes durch Dehnung der Absatzabstände durchgeführt wird. \raggedbottom ist bei den Dokumenttypen article, report und letter bereits voreingestellt. 
-
-\begin{hyphenrules}{ngerman}
-\hyphenation{%
-text-ex-ter-ne
-Glueck
-}
-\end{hyphenrules}
+%%% Standardeinstellungen für die Studienarbeit
+\input{EinstellungenAllgemein}
 
 \begin{document}
 \pagenumbering{arabic}
@@ -79,8 +8,8 @@ Glueck
 
 %%%%%%%%% Titel %%%%%%%%%%%%%
 
-\titlehead{ }
-\subject{ }
+%\titlehead{ }
+%\subject{ }
 \title{\MakeUppercase{Freut euch im Herrn allezeit, abermals sage ich: Freut euch!}} %\MakeUppercase macht Großsschreibung
 \subtitle{\MakeUppercase {Eine Einladung zur Freude am Herrn, nach Philipper 4,4}}
 \author{Seminarbeit für die Lehrveranstaltung\\
@@ -93,6 +22,14 @@ Prof. Dr. Philipp Bartholomä}
 
 \publishers{Florian Kurrle\\ \today} %Bei BA/MA mit Ort
 \maketitle
+
+%%%%%% nur bei BA/MA notwendig %%%%%%%%%%%%%%
+%\thispagestyle{empty}
+%\section*{Eigenständigkeitserklärung}
+%Hiermit erkläre ich wahrheitsgemäß, dass ich diese Arbeit selbstständig und inhaltlich ohne fremde Hilfe verfasst und keine anderen als die angegebenen Hilfsmittel benutzt habe. Die Stellen dieser Arbeit, die anderen Quellen im Wortlaut oder dem Sinn nach entnommen wurden, sind durch Angaben der Herkunft im Einzelnen kenntlich gemacht. Dies gilt auch für Zeichnungen, Skizzen, bildliche Darstellungen sowie für Quellen aus dem Internet. Die vorliegende Arbeit ist noch nicht veröffentlicht oder in gleicher oder anderer Form an irgendeiner Stelle als Prüfungsleistung vorgelegt worden.
+%Ort, \today Unterschrift 
+%\newpage
+
 \tableofcontents
 \pagestyle{headings}
 
